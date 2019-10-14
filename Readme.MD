@@ -10,6 +10,7 @@ Cloner le repo à l'emplacement souhaité
 Tapper le nom du programme puis la recherche après un espace : 
 EX = 
 > lib : google_searcher.rb la recherche que tu veux
+
 Executer le programme
 
 Il est possible de créer un alias pour éxecuter le programme de n'importe ou dans le terminal, en utilisant un mot que l'on à choisi à la place du nom du programme.
