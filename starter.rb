@@ -36,6 +36,13 @@ end
 def create_evrything_else
   working_dir = folder_name_and_path.join('/')
   Dir.chdir(working_dir) do
+    app = File.open('app.rb', 'w')
+    app.puts("require 'bundler'")
+    app.puts('Bundler.require')
+    app.puts
+    app.puts("$:.unshift File.expand_path('./../lib', __FILE__)")
+    app.puts("require ''")
+    app.close
     gitignore = File.open('.gitignore', 'w')
     File.open('.env', 'w')
     gitignore.puts('.env')
@@ -54,7 +61,13 @@ def system_shit
     system('rspec --init')
   end
   Dir.chdir(working_dir + '/lib') do
+    system('mkdir app')
+    system('mkdir views')
     File.open('test.rb', 'w')
+  end
+  Dir.chdir(working_dir + '/lib/views') do
+    File.open('done.rb', 'w')
+    File.open('index.rb', 'w')
   end
 end
 
